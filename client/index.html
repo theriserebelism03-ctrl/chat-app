@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Chat App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1>Real-Time Chat</h1>
+    </div>
+    
+    <!-- Username Setup Section -->
+    <div class="username-section" id="usernameSection">
+      <input 
+        type="text" 
+        id="usernameInput" 
+        placeholder="Enter your username" 
+        autocomplete="off"
+        maxlength="20"
+      >
+      <button id="joinBtn">Join Chat</button>
+    </div>
+
+    <!-- Chat Section (Hidden until username is set) -->
+    <div class="chat-section" id="chatSection" style="display: none;">
+      <div class="user-info" id="userInfo"></div>
+      <div class="chat-box" id="chatBox">
+        <div class="system-message">Welcome to the chat room! 👋</div>
+      </div>
+      <div class="input-container">
+        <input 
+          type="text" 
+          id="messageInput" 
+          placeholder="Type your message..." 
+          autocomplete="off"
+        >
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
